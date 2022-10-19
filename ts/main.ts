@@ -25,8 +25,10 @@ function isPresent(id: string, errMsg: string):boolean {
     return true;
 }
 
+/*
 function isEmailValid(email:string) {
     if (!email.includes("@")) { // needs change "target": "ES5" to later version
         return false;
     }
 }
+*/

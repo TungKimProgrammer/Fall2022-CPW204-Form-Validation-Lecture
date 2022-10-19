@@ -1,5 +1,5 @@
 window.onload = function () {
-    let formBtn = document.querySelector("form > button");
+    var formBtn = document.querySelector("form > button");
     formBtn.onclick = main;
 };
 function main() {
@@ -7,17 +7,12 @@ function main() {
     isPresent("last-name", "Last name is required");
 }
 function isPresent(id, errMsg) {
-    let inputBox = document.getElementById(id);
-    let inputValue = inputBox.value;
+    var inputBox = document.getElementById(id);
+    var inputValue = inputBox.value;
     if (inputValue == "") {
-        let errSpan = inputBox.nextElementSibling;
+        var errSpan = inputBox.nextElementSibling;
         errSpan.innerText = errMsg;
         return false;
     }
     return true;
-}
-function isEmailValid(email) {
-    if (!email.includes("@")) {
-        return false;
-    }
 }
