@@ -8,5 +8,5 @@ More info about TypeScript: [Check out the Official Site](https://www.typescript
 
 ## Goals of this Repo
 - Get practice making commits
-- More pactice with CSS
+- More practice with CSS
 - More of TypeScript
