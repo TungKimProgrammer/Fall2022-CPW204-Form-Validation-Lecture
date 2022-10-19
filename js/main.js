@@ -1,18 +1,23 @@
 window.onload = function () {
-    var formBtn = document.querySelector("form > button");
+    let formBtn = document.querySelector("form > button");
     formBtn.onclick = main;
 };
 function main() {
-    if (isPresent("first-name", "First name is required"))
-        isPresent("last-name", "Last name is required");
+    isPresent("first-name", "First name is required");
+    isPresent("last-name", "Last name is required");
 }
 function isPresent(id, errMsg) {
-    var inputBox = document.getElementById(id);
-    var inputValue = inputBox.value;
+    let inputBox = document.getElementById(id);
+    let inputValue = inputBox.value;
     if (inputValue == "") {
-        var errSpan = inputBox.nextElementSibling;
+        let errSpan = inputBox.nextElementSibling;
         errSpan.innerText = errMsg;
         return false;
     }
     return true;
+}
+function isEmailValid(email) {
+    if (!email.includes("@")) {
+        return false;
+    }
 }

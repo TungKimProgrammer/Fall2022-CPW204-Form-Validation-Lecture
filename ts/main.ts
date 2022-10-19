@@ -4,8 +4,8 @@ window.onload = function(){
 }
 
 function main():void {
-    if (isPresent("first-name", "First name is required"))
-    isPresent("last-name", "Last name is required")
+    isPresent("first-name", "First name is required");
+    isPresent("last-name", "Last name is required");
 }
 
 /**
@@ -18,9 +18,15 @@ function isPresent(id: string, errMsg: string):boolean {
     let inputBox = <HTMLInputElement>document.getElementById(id);
     let inputValue = inputBox.value;
     if (inputValue == "") {
-        let errSpan = <HTMLElement>inputBox.nextElementSibling;
+        let errSpan = <HTMLSpanElement>inputBox.nextElementSibling;
         errSpan.innerText = errMsg;
         return false;
     }
     return true;
+}
+
+function isEmailValid(email:string) {
+    if (!email.includes("@")) { // needs change "target": "ES5" to later version
+        return false;
+    }
 }

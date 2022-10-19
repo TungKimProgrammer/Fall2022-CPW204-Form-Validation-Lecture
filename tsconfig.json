@@ -2,7 +2,7 @@
   "compilerOptions": {
     "removeComments": true,
     "outDir": "js",
-    "target": "ES5",
+    "target": "ES2018",
     "watch": true,
   }
 }
