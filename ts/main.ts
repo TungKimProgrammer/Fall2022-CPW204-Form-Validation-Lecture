@@ -7,6 +7,14 @@ function main():void {
     resetErrMessage();
     isPresent("first-name", "First name is required");
     isPresent("last-name", "Last name is required");
+
+    // validate Date
+    let dobBox = <HTMLInputElement>document.getElementById("dob");
+    let dob = dobBox.value;
+    if (!isValidDate(dob)){
+        let errSpan = dobBox.nextElementSibling
+        errSpan.innerHTML = "Format should be mm/dd/yyyy"
+    }
 }
 
 /**
@@ -24,6 +32,14 @@ function isPresent(id: string, errMsg: string):boolean {
         return false;
     }
     return true;
+}
+
+function isValidDate(input: string):boolean{
+    // Validating mm/dd/yyyy or m/d/yyyy
+    // \d{1,2}\/d{1,2}\/d{4}
+    let pattern = /^\d{1,2}\/\d{1,2}\/\d{4}$/g;
+    let result = pattern.test(input);
+    return result;
 }
 
 /**
