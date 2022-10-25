@@ -18,6 +18,24 @@ form button {
     margin-top: 1em;
     margin-bottom: 1em;
     margin-left: 45%;
+    background-color: rgb(147, 241, 147);
+    color: purple;
+    border: 1px solid black;
+    cursor: pointer;
+    padding: .75em;
+    border-radius: .3em;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1, form label, form button, form input {
+    font-family: 'Indie Flower', cursive;
+}
+
+form button:hover {
+    background-color: orange;
 }
 
 @media only screen and (max-width:450px) {
