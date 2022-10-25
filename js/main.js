@@ -6,6 +6,12 @@ function main() {
     resetErrMessage();
     isPresent("first-name", "First name is required");
     isPresent("last-name", "Last name is required");
+    var dobBox = document.getElementById("dob");
+    var dob = dobBox.value;
+    if (!isValidDate(dob)) {
+        var errSpan = dobBox.nextElementSibling;
+        errSpan.innerHTML = "Format should be mm/dd/yyyy";
+    }
 }
 function isPresent(id, errMsg) {
     var inputBox = document.getElementById(id);
@@ -18,6 +24,9 @@ function isPresent(id, errMsg) {
     return true;
 }
 function isValidDate(input) {
+    var pattern = /^\d{1,2}\/\d{1,2}\/\d{4}$/g;
+    var result = pattern.test(input);
+    return result;
 }
 function resetErrMessage() {
     var allSpan = document.querySelectorAll("form span");
